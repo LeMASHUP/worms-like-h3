@@ -42,12 +42,13 @@ int main(int argc, char** argv)
 
 
 	H3_Object_AddComponent(player, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
-	H3_Object_SetRenderOrder(player, 1);
-	H3_Object_Translate(player, width / 2, height / 2);
+	H3_Object_SetRenderOrder(player, 2);
+	H3_Object_Translate(player, 100, 200);
+	
 
 	H3_Object_AddComponent(ennemy, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
-	H3_Object_SetRenderOrder(ennemy, 1);
-	H3_Object_Translate(ennemy, 100, 200);
+	H3_Object_SetRenderOrder(ennemy, 2);
+	H3_Object_Translate(ennemy, width / 2, height / 2);
 
 
 
