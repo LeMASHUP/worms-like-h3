@@ -36,8 +36,9 @@ int main(int argc, char** argv)
 
 
 	H3_Object_AddComponent(mapsolid, SPRITECOMPONENT_CREATE("assets/wormsmap.png", 0x22));
-	H3_Object_SetRenderOrder(mapsolid, 2);
-	
+	H3_Object_SetRenderOrder(mapsolid, 1);
+	H3_Object_Translate(mapsolid, 650, 314);
+	H3_Object_Scale(mapsolid, 2.5);
 
 
 	H3_Object_AddComponent(player, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
