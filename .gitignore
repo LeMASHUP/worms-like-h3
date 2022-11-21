@@ -1,74 +1,9 @@
-# Prerequisites
-*.d
+.vs
+build/
+imgui.ini
+bin/*.pdb
+bin/*.idb
+bin/*.lib
+bin/*.exp
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-*.log
-.vs/h3_application/FileContentIndex/7011d879-524e-47c6-9956-41de842f662d.vsidx
-.vs/h3_application/FileContentIndex/read.lock
-.vs/h3_application/v17/.suo
-.vs/h3_application/v17/Browse.VC.db
-.vs/h3_application/v17/Browse.VC.db-shm
-.vs/h3_application/v17/Browse.VC.db-wal
-.vs/h3_application/v17/Browse.VC.opendb
-.vs/h3_application/v17/ipch/AutoPCH/ef286368fea77040/MAIN.ipch
-.vs/h3_application/v17/Solution.VC.db
-.vs/h3_application/v17/Solution.VC.db-shm
-.vs/h3_application/v17/Solution.VC.db-wal
-bin/assets/player.png
-build/h3_application/x64_Debug/h3_application-d.exe.recipe
-build/h3_application/x64_Debug/h3_application.tlog/CL.command.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/CL.read.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/CL.write.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/h3_application.lastbuildstate
-build/h3_application/x64_Debug/h3_application.tlog/link.command.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/link.read.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/link.write.1.tlog
-build/h3_application/x64_Debug/h3_application.tlog/link.write.2u.tlog
+bin/*.exe

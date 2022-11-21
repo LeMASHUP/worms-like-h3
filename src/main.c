@@ -32,6 +32,12 @@ int main(int argc, char** argv)
 	H3Handle scene = H3_Scene_Create(h3, true);
 	H3Handle player = H3_Object_Create(scene, "player", NULL);
 	H3Handle ennemy = H3_Object_Create(scene, "ennemy", NULL);
+	H3Handle mapsolid = H3_Object_Create(scene, "mapsolid", NULL);
+
+
+	H3_Object_AddComponent(mapsolid, SPRITECOMPONENT_CREATE("assets/wormsmap.png", 0x22));
+	H3_Object_SetRenderOrder(mapsolid, 2);
+	
 
 
 	H3_Object_AddComponent(player, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
