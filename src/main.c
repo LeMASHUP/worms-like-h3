@@ -1,6 +1,7 @@
 #include <h3.h>
 #include "components\spritecomponent.h"
 #include "components\cameracomponent.h"
+#include "components\maplayercomponent.h"
 #include <stdlib.h>
 #include<math.h>
 
@@ -12,6 +13,14 @@
 
 int width;
 int height;
+int playerlife;
+int ennemylife;	
+float playerx;
+float playery;
+int turn;
+int shootturn;
+turn = 100000;
+shootturn = 1;
 
 int main(int argc, char** argv)
 {
@@ -26,36 +35,52 @@ int main(int argc, char** argv)
 			.height = height,
 			.width = width,
 			.windowTitle = "Worms like Hydrogen Engine 3"
+			
 	});
 
 
 	H3Handle scene = H3_Scene_Create(h3, true);
 	H3Handle player = H3_Object_Create(scene, "player", NULL);
 	H3Handle ennemy = H3_Object_Create(scene, "ennemy", NULL);
-	H3Handle mapsolid = H3_Object_Create(scene, "mapsolid", NULL);
-
-
-	H3Handle mapTmx = H3_map_load("bin/wormsmap1");
-	H3Handle mapInScene = H3_Object_Create(scene, "map", NULL);
-	H3_Object_AddComponent(mapInScene, MAPLAYERCOMPONENT_CREATE(mapTmx, "1"));
 
 	
-
-
 	H3_Object_AddComponent(player, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
+	H3_Object_EnablePhysics(player, H3_BOX_COLLIDER(CDT_Dynamic, 65, 65, 0x22, false));
 	H3_Object_SetRenderOrder(player, 2);
-	H3_Object_Translate(player, 100, 200);
+	H3_Object_SetTranslation(player, 300, 50);
 	
 
-	H3_Object_AddComponent(ennemy, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
-	H3_Object_SetRenderOrder(ennemy, 2);
-	H3_Object_Translate(ennemy, width/2, height/2);
+	H3_Object_AddComponent(ennemy, SPRITECOMPONENT_CREATE("assets/ennemy.png", 0x22));
+	H3_Object_EnablePhysics(ennemy, H3_BOX_COLLIDER(CDT_Dynamic, 64, 50, 0x22, false));
+	H3_Object_SetRenderOrder(ennemy, 3);
+	H3_Object_SetTranslation(ennemy, 870, 50);
+	
 
 
-
+	H3Handle accueil_worms = H3_Map_Load("assets/1worms.tmx"); // une sorte d'accès à ta map (n'est pas la map dans la scène, la charge uniquement)
+	H3Handle map1 = H3_Object_Create(scene, "map1", NULL); //Crée la map dans la scène -> différent d'en haut qui load uniquement (celle ci va permettre de la place dans la scène)
+	H3_Object_AddComponent(map1, MAPLAYERCOMPONENT_CREATE(accueil_worms, "background")); //Comme pour les collisions, sauf qu'ici tu appelles un composant pour afficher ton layer décoratif (fond et sol du jeu)
+	H3_Map_RegisterObjectLayerForPhysicsInScene(scene, accueil_worms, "collisions"); //dans ta map Tiled tu as des layers, dont un qui doit s'appeler collisions (celui que tu appelles du coup)
+	
 
 	while (H3_DoFrame(h3, scene)) {
+		H3_Transform_GetPosition(H3_Object_GetTransform(player), &playerx, &playery);
+		H3_Object_SetVelocity(player, 0, playery*0.80);
 
+		if (turn>0) {
+
+			if (H3_Input_IsKeyPressed(K_Right)) {
+				H3_Object_Translate(player, 20, 0);
+				turn -= 1;
+			}
+			if (H3_Input_IsKeyPressed(K_Left)) {
+				H3_Object_Translate(player, -20, 0);
+				turn -= 1;
+			}
+			if (H3_Input_IsKeyPressed(K_Up)) {
+				H3_Object_Translate(player, 0, -50);
+			}
+		}
 	}
 	return 0;
 }

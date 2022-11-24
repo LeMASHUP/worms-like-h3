@@ -1,0 +1,72 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "1worms.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "1worms.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -13.333333333333314,
+                "y": 211.66666666666669
+            }
+        },
+        "2worms.tmx": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 214.66666666666669,
+                "y": 440.3333333333333
+            }
+        },
+        "Tile map.tsx": {
+            "scaleInDock": 1
+        },
+        "Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "dirt.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "grass.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/duter/OneDrive/Bureau/H3 Engine/worms-like-h3/bin/assets",
+    "last.imagePath": "C:/Users/duter/OneDrive/Bureau/H3 Engine/worms-like-h3/bin/assets",
+    "map.height": 23,
+    "map.lastUsedExportFilter": "Tous les Fichiers (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 40,
+    "openFiles": [
+        "2worms.tmx",
+        "1worms.tmx",
+        "Tileset.tsx",
+        "grass.tsx",
+        "dirt.tsx"
+    ],
+    "project": "wormsmap.tiled-project",
+    "recentFiles": [
+        "2worms.tmx",
+        "dirt.tsx",
+        "grass.tsx",
+        "Tileset.tsx",
+        "1worms.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.type": 0
+}
