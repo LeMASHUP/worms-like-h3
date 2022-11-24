@@ -17,6 +17,8 @@ int playerlife;
 int ennemylife;	
 float playerx;
 float playery;
+float mousex;
+float mousey;
 int turn;
 int shootturn;
 turn = 5;
@@ -67,6 +69,7 @@ int main(int argc, char** argv)
 		H3_Transform_GetPosition(H3_Object_GetTransform(player), &playerx, &playery);
 		H3_Object_SetVelocity(player, 0, playery*0.80);
 		H3_Object_SetVelocity(ennemy, 0, playery * 0.80);
+		H3_Input_GetMousePos(h3, &mousex, &mousey);
 
 		if (shootturn > 0) {
 			if (H3_Input_IsMouseBtnPressed(MB_Right)) {
