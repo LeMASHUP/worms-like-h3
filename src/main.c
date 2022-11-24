@@ -19,7 +19,7 @@ float playerx;
 float playery;
 int turn;
 int shootturn;
-turn = 100000;
+turn = 5;
 shootturn = 1;
 
 int main(int argc, char** argv)
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
 	
 
 	H3_Object_AddComponent(ennemy, SPRITECOMPONENT_CREATE("assets/ennemy.png", 0x22));
-	H3_Object_EnablePhysics(ennemy, H3_BOX_COLLIDER(CDT_Dynamic, 64, 50, 0x22, false));
+	H3_Object_EnablePhysics(ennemy, H3_BOX_COLLIDER(CDT_Dynamic, 65, 65, 0x22, false));
 	H3_Object_SetRenderOrder(ennemy, 3);
 	H3_Object_SetTranslation(ennemy, 870, 50);
 	
@@ -66,6 +66,14 @@ int main(int argc, char** argv)
 	while (H3_DoFrame(h3, scene)) {
 		H3_Transform_GetPosition(H3_Object_GetTransform(player), &playerx, &playery);
 		H3_Object_SetVelocity(player, 0, playery*0.80);
+		H3_Object_SetVelocity(ennemy, 0, playery * 0.80);
+
+		if (shootturn > 0) {
+			if (H3_Input_IsMouseBtnPressed(MB_Right)) {
+				shootturn = 0;
+				turn = 0;
+			}
+		}
 
 		if (turn>0) {
 
