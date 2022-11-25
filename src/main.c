@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <conio.h>
 #include<math.h>
-#include "components/playercomponent.h"
-#include "components/bulletcomponent.h"
+#include "playercomponent.h"
+#include "bulletcomponent.h"
 
 #ifndef NDEBUG
 # pragma comment(lib, "h3-s-d.lib")
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 
 
 	H3_Object_AddComponent(player, SPRITECOMPONENT_CREATE("assets/Player.png", 0x22));
-	H3_Object_AddComponent(player, PLAYERCOMPONENT_CREATE());
+	H3_Object_AddComponent(player, PLAYERCOMPONENT_CREATE("assets / Player.png", 0x22));
 	H3_Object_EnablePhysics(player, H3_BOX_COLLIDER(CDT_Dynamic, 32, 64, 0x22, false));
 	H3_Object_SetRenderOrder(player, 2);
 	H3_Object_SetTranslation(player, 300, 50);
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
 				H3_Object_EnablePhysics(bullet, H3_BOX_COLLIDER(CDT_Dynamic, 5, 5, 0x22, false));
 				H3_Object_SetTranslation(bullet, playerx, playery);
 				H3_Object_AddComponent(bullet, SPRITECOMPONENT_CREATE("assets/bomb.png", A_Center));
-				H3_Object_AddComponent(bullet, BULLETCOMPONENT_CREATE());
+				H3_Object_AddComponent(bullet, BULLETCOMPONENT_CREATE("assets/bomb.png", A_Center));
 				H3_Object_AddVelocity(bullet, dx, dy);
 				H3_Object_GetVelocity(bullet, &bx, &by);
 				H3_Object_SetVelocity(bullet, bx, by);

@@ -1,4 +1,4 @@
-#include "components/playercomponent.h"
+#include "playercomponent.h"
 #include <stdlib.h>
 
 typedef struct

@@ -1,4 +1,4 @@
-#include "components/bulletcomponent.h"
+#include "bulletcomponent.h"
 #include <stdlib.h>
 
 typedef struct

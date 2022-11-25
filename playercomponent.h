@@ -13,7 +13,7 @@ void* PlayerComponent_CreateProperties(const char* texturePath, uint8_t anchor);
 void Player_Component_Collisions(H3Handle Object, SH3Collision collisions);
 H3_CAPI_END_BLOCK
 
-#define PlayerCOMPONENT_CREATE(TEXTURE, ANCHOR)                                          \
+#define PLAYERCOMPONENT_CREATE(TEXTURE, ANCHOR)                                          \
 	(SH3Component) {                                                            \
 		.Init               = NULL,                                                      \
 		.Terminate          = PlayerComponent_Terminate,                                 \
