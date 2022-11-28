@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="bulletcomponent.h" />
     <ClInclude Include="playercomponent.h" />
+    <ClInclude Include="src\main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

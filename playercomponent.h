@@ -3,7 +3,7 @@
 
 #include <h3.h>
 
-#define PlayerCOMPONENT_TYPEID 0x80000001
+#define PLAYERCOMPONENT_TYPEID 0x80000001
 
 H3_CAPI_BEGIN_BLOCK
 void PlayerComponent_Terminate(void* properties);
@@ -19,7 +19,7 @@ H3_CAPI_END_BLOCK
 		.Terminate          = PlayerComponent_Terminate,                                 \
 		.Update             = PlayerComponent_Update,                                                      \                                    \
 		.isInitialized      = false,                                                     \
-		.componentType      = PlayerCOMPONENT_TYPEID,                                    \
+		.componentType      = PLAYERCOMPONENT_TYPEID,                                    \
 		.properties         = PlayerComponent_CreateProperties(TEXTURE, (uint8_t)ANCHOR) \
 		.OnCollisionEnter = Player_Component_Collisions \
 	}
